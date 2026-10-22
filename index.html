@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregas - Gestor de Publicaciones</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: .5rem; }
+        .menu { display: grid; gap: 1rem; margin-top: 1.5rem; }
+        .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; transition: background 0.2s; text-decoration: none; color: #333; }
+        .card:hover { background-color: #f4f4f4; border-color: #888; }
+        .card h2 { margin: 0 0 .5rem 0; font-size: 1.2rem; color: #0066cc; }
+        .card p { margin: 0; font-size: 0.9rem; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Taller: Gestor de Publicaciones</h1>
+    <p>Seleccione la actividad que desea revisar:</p>
+
+    <div class="menu">
+        <a href="index1.html" class="card">
+            <h2>Actividad 1</h2>
+            <p>Envío de datos mediante parámetros por URL (GET basico).</p>
+        </a>
+
+        <a href="index2.html" class="card">
+            <h2>Actividad 2</h2>
+            <p>Ampliación GET: Filtro por título, select de límite y comentarios por post.</p>
+        </a>
+
+        <a href="index3.html" class="card">
+            <h2>Actividad 3 (Versión Final)</h2>
+            <p>Ampliación POST: Validación de publicaciones y formulario de comentarios con FormData.</p>
+        </a>
+    </div>
+</body>
+</html>

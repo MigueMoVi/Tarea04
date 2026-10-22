@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de publicaciones</title>
+    <style>
+        body { font-family: Arial; max-width: 640px; margin: 2rem auto; }
+        form { display: grid; gap: .5rem; margin-bottom: 1rem; }
+        .post { border: 1px solid #ddd; border-radius: 6px;
+                padding: 0 1rem 1rem 1rem; margin: .5rem 0; cursor: pointer; transition: background 0.2s; }
+        .post:hover { background-color: #f9f9f9; }
+        .nuevo { border-color: seagreen; background: #f0fff4; }
+        .error { color: crimson; font-weight: bold; }
+        
+        .comentarios-container {
+            margin-top: 10px;
+            padding: 10px;
+            border-top: 1px dashed #bbb;
+            background-color: #f4f4f4;
+            border-radius: 4px;
+        }
+        .comentarios-container h4 { margin: 0 0 8px 0; font-size: 0.95rem; }
+        .comentarios-container ul { margin: 0; padding-left: 20px; font-size: 0.85rem; }
+        .comentarios-container li { margin-bottom: 5px; }
+        
+        /* Estilos Actividad 3 */
+        .seccion-form {
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestor de publicaciones</h1>
+	
+	<!-- Actividad 1 -->
+	<div style="border: solid 1px #d1cab4; border-radius: 4px; padding: 7px; margin-bottom: 1rem;">
+	<p>Para mostrar en el URL</p>
+	<form id="form-actividad1" method="get" action="">
+        <label>Nombre:
+            <input id="activ1-Nombre" type="text" name="nombre" required>
+        </label>
+        <label>Ciudad:
+            <input id="activ1-Ciudad" type="text" name="ciudad" required>
+        </label>
+        <button type="submit">Enviar datos por URL</button>
+    </form>
+	<p> Datos enviados: <br>
+		Nombre: <span id="ver-nombre"></span> <br>
+		Ciudad: <span id="ver-ciudad"></span> <br>
+	</p>
+	</div>
+	
+    <h2>Listar (GET)</h2>
+    <form id="form-buscar">
+        <label>Usuario (1 a 10)
+            <input type="number" id="input-usuario"
+                   min="1" max="10" value="1">
+        </label>
+
+        <!-- Actividad 2 -->
+        <label>Cantidad de publicaciones (_limit):
+            <select id="select-limite">
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </label>
+
+        <label>Filtrar por título:
+            <input type="text" id="input-filtro-titulo" placeholder="Buscar por título...">
+        </label>
+
+        <button type="submit">Listar publicaciones</button>
+    </form>
+
+    <div class="seccion-form">
+        <h2>Nueva publicación (POST)</h2>
+        <form id="form-crear">
+            <input type="text" id="input-titulo" placeholder="Título (mínimo 5 caracteres)">
+            <textarea id="input-cuerpo" rows="3" placeholder="Contenido"></textarea>
+            <button type="submit" id="btn-crear">Publicar</button>
+        </form>
+    </div>
+
+    <!-- Actividad 3: Formulario para comentar -->
+    <div class="seccion-form">
+        <h2>Nuevo comentario (POST)</h2>
+        <form id="form-comentario">
+            <label>ID Publicación (postId):
+                <input type="number" name="postId" min="1" placeholder="Ej. 1" required>
+            </label>
+            <input type="text" name="name" placeholder="Tu nombre / Título del comentario" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <textarea name="body" rows="2" placeholder="Escribe tu comentario..." required></textarea>
+            <button type="submit" id="btn-comentar">Enviar Comentario</button>
+        </form>
+    </div>
+
+    <p id="estado"></p>
+    <section id="lista"></section>
+
+    <script src="app3.js"></script>
+</body>
+</html>
